@@ -15,3 +15,8 @@ VERSION  := 0.8.0
 TARGET   := mysqld_exporter
 
 include Makefile.COMMON
+
+rpm: mysqld_exporter
+	@echo ">> building rpm"
+	@rpmbuild -bb --define "_sourcedir $(CURDIR)" --define "_rpmdir $(CURDIR)" --define "_build_name_fmt %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm" mysqld_exporter.spec
+

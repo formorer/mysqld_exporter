@@ -5,3 +5,4 @@ mysqld_exporter
 *-stamp
 .idea
 *.iml
+*.rpm

@@ -1,0 +1,10 @@
+[Unit]
+Description=Mysqld Exporter
+
+[Service]
+User=prometheus
+EnvironmentFile=-/etc/default/mysqld_exporter
+ExecStart=/usr/bin/mysqld_exporter
+
+[Install]
+WantedBy=default.target
